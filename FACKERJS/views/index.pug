@@ -1,5 +1,12 @@
 extends layout
 
 block content
+  link(rel='stylesheet', href='../stylesheets/index.css')
   h1= title
   p Welcome to #{title}
+  each poeta, index in poeti
+    div.p
+      a(href=`/details?id=${index}`) 
+        h3 #{poeta.firstName} #{poeta.lastName}
+      h3 #{poeta.age}
+      img(src=`${poeta.image}`)
